@@ -1,0 +1,13 @@
+app-root{
+    min-height: 100%;
+}
+
+
+  
+  @media (max-width: 480px) {
+    
+    #textTop{
+        font-size: 13px;
+    }
+    
+  }

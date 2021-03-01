@@ -1,0 +1,63 @@
+<section class='container bg-green mt-lg-4 mt-2 mb-5'>
+    <div class='row d-flex justify-content-center'>
+        <div class='row col-12 col-lg-3' id='infoCon'>
+                <div class='col-3 col-md- col-lg-12'>
+                    <h1 class='logoFont'>T<span class='colLog'>I</span>C       
+                <br><span class='colLog'>T</span>A<span class='colLog'>C</span>
+              <br>T<span class='colLog'>O</span>E</h1>
+                </div>
+                <div class='col-9 col-md-8 col-lg-12 row'>
+                    <div class='col-12 col-md-6 mt-md-2 col-lg-12'>
+                        <button type='button' (click)='newGame()' class='btn btn-primary mb-3'>Comenzar un juego</button>
+                      <button type='button' class='btn btn-secondary mb-3' (click)='restar()'>Reiniciar partida &#8634;</button> 
+                      </div>
+                </div>
+            <div class='col-12 col-md-5 col-lg-12 row m-0 mt-3 d-flex justify-content-around justify-content-md-start'>
+                <h3 class='ps-0 text-center text-md-start'>Puntaje</h3>
+                <div class='col-md-5 col-4 cardScore'>
+                    <p class='xSel WGame'>X</p>
+                    <p>{{scoreOne}}</p>
+                </div>
+                <div class='col-md-5 col-4 cardScore ms-3'>
+                    <p class='oSel WGame'>O</p>
+                    <p>{{scoreTwo}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class='col-12 col-lg-9 mt-4 mt-lg-0 justify-content-center'>
+            <h2 class='mb-4  text-center text-md-start'  *ngIf='bSeeGame'>Jugador actual:<span class='WGame' [ngClass]='player=="X" ? "xSel" : "oSel"'> {{ player }}</span></h2>
+         
+            <div id='grid-b' *ngIf='bSeeGame'>
+                <app-square 
+                    *ngFor='let val of squares; let i = index' 
+                    [value]='val'
+                    (click)='makeMove(i)'> 
+                </app-square>
+            </div>
+
+            <div class='coll-6' id='winner' *ngIf='over' [ngClass]='{"fadeInRight":over}'>
+                <h3 class='text-center'>¡Juego terminado!</h3>
+                <img class='my-4' src='./assets/img/prize.svg' alt='Premio'>
+                <h4 class='text-center'>
+                    ¡El  <span class='WGame' [ngClass]='player=="O" ? "xSel" : "oSel"'> {{ sWinner }}</span> gano el juego!
+                </h4>
+                <button type='button' (click)='newGame()' class='btn btn-link'>Nueva partida</button>
+            </div>
+
+            <div class='coll-6' id='winner' *ngIf='bNoWinner' [ngClass]='{"fadeInRight":bNoWinner}'>
+                <h3 class='text-center'>¡Empate - Juego terminado!</h3>
+                <img class='my-4' src='./assets/img/stupid.svg' alt='Empate'>
+                <h4 class='text-center'> Nadie ha ganado</h4>
+                <button type='button' (click)='newGame()' class='btn btn-link'>Nueva partida</button>
+            </div>
+          
+        </div>
+        
+    </div>
+    
+
+
+    
+    
+</section>

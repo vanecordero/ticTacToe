@@ -1,0 +1,31 @@
+
+.elemXorO{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color:#07278e;
+    height: 100%;
+    font-size: 10rem;
+    font-weight: bold;
+}
+button { width: 100%; height: 100%; font-size: 5em !important; }
+
+#X{
+    color: #ffbc00;
+}
+#O{
+    color: #ff0202;
+}
+@media (max-width: 768px) {
+    .elemXorO{
+        font-size: 8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .elemXorO{
+        font-size: 5rem;
+    }
+    
+  }

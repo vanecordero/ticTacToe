@@ -1,0 +1,151 @@
+  
+@font-face{
+    font-family: 'font-logo';
+    src: url('../../assets/fonts/FredokaOne-Regular.ttf');
+}
+
+@font-face{
+    font-family: 'font-general';
+    src: url('../../assets/fonts/VarelaRound-Regular.ttf');
+}
+
+*{
+    font-family: 'font-general';  
+}
+
+#infoCon{
+    max-height: 500px;
+}
+
+.WGame{
+    font-family: 'font-logo' !important;
+}
+.xSel{
+color: #ffbc00;
+}
+.oSel{
+color: #ff0202;
+}
+
+.logoFont{
+    font-family: 'font-logo' ;
+    color: rgb(80, 121, 255);
+}
+.colLog{
+    font-family: 'font-logo' ;
+    color: rgb(245 103 150);
+}
+
+#grid-b{
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-gap: 0px;
+    border-radius: 5px;
+}
+  
+app-square {
+    padding: 10px;
+    height: 200px;
+    background-color: #5177f5;
+}
+
+.cardScore{
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 5px #f56796 solid;
+    background-color: #fb79a5;
+}
+.cardScore p{
+    margin: auto;
+}
+
+.cardScore :first-child{
+    font-size: 2.5rem;
+}
+.cardScore :nth-child(2){
+    font-size: 2.5rem;
+    color: #FFF;
+}
+
+ 
+    #winner,#Empate{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #winner img,#Empate img{
+        width: 200px;
+        margin: auto;
+    }
+    
+
+
+    .fadeInRight {
+        -webkit-animation-name: fadeInRight;
+        animation-name: fadeInRight;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        }
+        @-webkit-keyframes fadeInRight {
+        0% {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+        }
+        100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+        }
+        }
+        @keyframes fadeInRight {
+        0% {
+        opacity: 0;
+        -webkit-transform: translate3d(100%, 0, 0);
+        transform: translate3d(100%, 0, 0);
+        }
+        100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+        }
+     } 
+
+     @media (max-width: 768px) {
+        app-square {
+            padding: 5px;
+            height: 150px;
+        }
+    
+        #grid-b{
+            grid-template-columns: 150px 150px 150px;
+            grid-template-rows: 150px 150px 150px;
+            padding-left: 15px;
+        }
+    
+   
+    
+    }
+
+     @media (max-width: 480px) {
+        app-square {
+            padding: 5px;
+            height: 100px;
+        }
+    
+        #grid-b{
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px 100px 100px;
+            padding-left: 15px;
+        }
+    
+        #winner img,#Empate img{
+            width: 150px;
+        }
+        
+    
+        
+      }
