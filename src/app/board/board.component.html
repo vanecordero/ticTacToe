@@ -38,7 +38,7 @@
 
             <div class='coll-6' id='winner' *ngIf='over' [ngClass]='{"fadeInRight":over, "winLines": kaka}'>
                 <h3 class='text-center'>¡Juego terminado!</h3>
-                <img class='my-4' src='./assets/img/prize.svg' alt='Premio'>
+                <img class='my-4' src='assets/img/prize.svg' alt='Premio'>
                 <h4 class='text-center'>
                     ¡El  <span class='WGame' [ngClass]='player=="O" ? "xSel" : "oSel"'> {{ sWinner }}</span> gano el juego!
                 </h4>
@@ -47,7 +47,7 @@
 
             <div class='coll-6' id='winner' *ngIf='bNoWinner' [ngClass]='{"fadeInRight":bNoWinner}'>
                 <h3 class='text-center'>¡Empate - Juego terminado!</h3>
-                <img class='my-4' src='./assets/img/stupid.svg' alt='Empate'>
+                <img class='my-4' src='assets/img/stupid.svg' alt='Empate'>
                 <h4 class='text-center'> Nadie ha ganado</h4>
                 <button type='button' (click)='newGame()' class='btn btn-link'>Nueva partida</button>
             </div>
