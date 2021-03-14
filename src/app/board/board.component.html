@@ -25,18 +25,18 @@
             </div>
         </div>
 
-        <div class='col-12 col-lg-9 mt-4 mt-lg-0 justify-content-center'>
-            <h2 class='mb-4  text-center text-md-start'  *ngIf='bSeeGame'>Jugador actual:<span class='WGame' [ngClass]='player=="X" ? "xSel" : "oSel"'> {{ player }}</span></h2>
+        <div class='col-12 col-lg-9 mt-4 mt-lg-0 d-flex flex-column justify-content-center'>
+            <div><h2 class='mb-4  text-center text-md-start'  *ngIf='bSeeGame'>Jugador actual:<span class='WGame' [ngClass]='player=="X" ? "xSel" : "oSel"'> {{ player }}</span></h2></div>
          
-            <div id='grid-b' *ngIf='bSeeGame'>
+            <div id='grid-b' *ngIf='bSeeGame' class='mx-auto'>
                 <app-square 
                     *ngFor='let val of squares; let i = index' 
                     [value]='val'
-                    (click)='makeMove(i)'> 
+                    (click)='makeMove(i)' class='sqrElment' [ngClass]='{"over":unTouch, "fadeOut": over}'> 
                 </app-square>
             </div>
 
-            <div class='coll-6' id='winner' *ngIf='over' [ngClass]='{"fadeInRight":over}'>
+            <div class='coll-6' id='winner' *ngIf='over' [ngClass]='{"fadeInRight":over, "winLines": kaka}'>
                 <h3 class='text-center'>¡Juego terminado!</h3>
                 <img class='my-4' src='./assets/img/prize.svg' alt='Premio'>
                 <h4 class='text-center'>

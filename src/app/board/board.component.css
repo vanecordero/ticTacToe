@@ -44,9 +44,42 @@ color: #ff0202;
 }
   
 app-square {
-    padding: 10px;
+    padding: 4px;
     height: 200px;
-    background-color: #5177f5;
+    background-color: rgba(255, 255, 255, 0.712);
+}
+
+#grid-b app-square:nth-child(4),
+#grid-b app-square:nth-child(5),
+#grid-b app-square:nth-child(6),
+#grid-b app-square:nth-child(7),
+#grid-b app-square:nth-child(8),
+#grid-b app-square:nth-child(9){
+    border-top: 5px solid #5177f5;
+}
+#grid-b app-square:first-child,
+#grid-b app-square:nth-child(2),
+#grid-b app-square:nth-child(4),
+#grid-b app-square:nth-child(5),
+#grid-b app-square:nth-child(7),
+#grid-b app-square:nth-child(8){
+    border-right: 5px solid #5177f5;
+}
+#grid-b app-square:first-child,
+#grid-b app-square:nth-child(2),
+#grid-b app-square:nth-child(3),
+#grid-b app-square:nth-child(4),
+#grid-b app-square:nth-child(5),
+#grid-b app-square:nth-child(6){
+    border-bottom: 5px solid #5177f5;
+}
+#grid-b app-square:nth-child(2),
+#grid-b app-square:nth-child(3),
+#grid-b app-square:nth-child(5),
+#grid-b app-square:nth-child(6),
+#grid-b app-square:nth-child(8),
+#grid-b app-square:nth-child(9){
+    border-left: 5px solid #5177f5;
 }
 
 .cardScore{
@@ -114,6 +147,31 @@ app-square {
         }
      } 
 
+
+     /*BLoquear los eventos click si se acaba el juego*/
+     .over{
+        pointer-events:none
+     }
+    
+     .fadeOut {
+        -webkit-animation-name: fadeOut;
+        animation-name: fadeOut;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        }
+        @-webkit-keyframes fadeOut {
+        0% {opacity: 1;}
+        100% {display: none !important;opacity: 0;
+        }
+        }
+        @keyframes fadeOut {
+        0% {opacity: 1;}
+        100% {display: none !important;opacity: 0;
+            }
+        } 
+    
      @media (max-width: 768px) {
         app-square {
             padding: 5px;
